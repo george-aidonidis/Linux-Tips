@@ -32,6 +32,14 @@ sudo apt --purge remove package_name
 ```sh
 sudo apt-get purge --auto-remove package_name
 ```
+#### Arch
+```sh
+pacman -Qm
+# or
+yaourt -Qm
+# remove
+yaourt -Rsn package_name
+```
 
 ### How to install a package
 ```sh
@@ -63,6 +71,11 @@ More [here][https://www.digitalocean.com/community/tutorials/how-to-install-node
 
 ### Zsh install on linux
 
+#### Arch
+```sh
+pacman -S zsh
+```
+
 Prereq:
 
 ```bash
@@ -90,3 +103,14 @@ This problem is explained in depth in [this issue](https://github.com/robbyrusse
 
 `Albert` a lightweight application launcher [info][https://albertlauncher.github.io/docs/installing/]
 
+* Messenger client for linux
+
+Download snapshot [here](https://aur.archlinux.org/packages/messengerfordesktop-bin/)
+```sh
+cd path/to/download/file
+tar xfv messengerfordesktopblahblah
+cd messengerfordesktopblahblah
+makepkg -sic
+cd ..
+messengerfordesktopblahlbah
+```
