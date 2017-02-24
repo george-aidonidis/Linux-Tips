@@ -55,6 +55,22 @@ pacman -Qm
 yaourt -Qm
 # remove
 yaourt -Rsn package_name
+
+### How to keep arch up to date
+```sh
+sudo pacman -Syy
+```
+This is to update the database, just like
+in Debian or Ubuntu.
+```sh
+sudo aptitude update
+```
+We will later perform the update.
+```sh
+sudo pacman -Su
+```
+And that is it, you should run these commands, mmmh *once a week*, and you will stay up to date.
+
 ```
 ### How to install a package
 ```sh
