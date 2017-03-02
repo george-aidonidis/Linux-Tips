@@ -1,14 +1,14 @@
 # Linux tips
 
 ## Table of Contents
-1. [General terminal tips](#general)
+1. [General terminal tips](#general-tips)
 2. [Useful app](#useful)
-    * [Node-js](#nodejs)
-    * [zsh](#zsh)
+    * [Node-js](#nodejs-on-linux-(nvm))
+    * [zsh](#Zsh-install-on-linux)
 3. [Git](#git)
-4. [Gnome/Extensions](#extensions)
+4. [Graphics or Extensions](#graphics-or-extensions)
 
-## General tips <div id="general"></div>
+## General tips
 
 ### Display disks nicely
 ```sh
@@ -70,6 +70,12 @@ We will later perform the update.
 sudo pacman -Su
 ```
 And that is it, you should run these commands, mmmh *once a week*, and you will stay up to date.
+### Aur update
+
+```sh
+yaourt -Syu --aur
+```
+Shows upgradable aur packages.
 
 ```
 ### How to install a package
@@ -86,9 +92,9 @@ sudo apt-get autoremove
 sudo apt clean
 ```
 
-## Useful packages <div id="useful"></div>
+## Useful packages
 
-### nodejs on linux (nvm) <div id="nodejs"></div>
+### nodejs on linux (nvm)
 ```sh
 sudo apt update
 sudo apt-get install build-essential libssl-dev
@@ -101,7 +107,7 @@ nvm install xxx
 ```
 More [here](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-debian-8)
 
-### Zsh install on linux <div id="zsh"></div>
+### Zsh install on linux
 
 #### Arch
 ```sh
@@ -143,7 +149,7 @@ makepkg -sic
 cd ..
 messengerfordesktopblahlbah
 ```
-## Git <div id="git"></div>
+## Git
 
 #### Setup vim for git commit messages
 ```sh
@@ -155,7 +161,7 @@ This will cause Vim to have syntax highlighting on, wrap at 72 characters and tu
 
 _Line 2 will cause an error if the plugin (which??) is not installed_
 
-## Graphics/Extensions <div id="extensions"></div>
+## Graphics or Extensions
 #### Change window button position
 ```sh
 gsettings set  org.gnome.desktop.wm.preferences button-layout 'close,maximize,minimize:'
