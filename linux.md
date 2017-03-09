@@ -55,7 +55,7 @@ pacman -Qm
 yaourt -Qm
 # remove
 yaourt -Rsn package_name
-
+```
 ### How to keep arch up to date
 ```sh
 sudo pacman -Syy
@@ -77,7 +77,6 @@ yaourt -Syu --aur
 ```
 Shows upgradable aur packages.
 
-```
 ### How to install a package
 ```sh
 sudo dpkg -i package_name
@@ -136,7 +135,7 @@ This problem is explained in depth in [this issue](https://github.com/robbyrusse
 
 ## Useful packages
 
-`Albert` a lightweight application launcher [info][https://albertlauncher.github.io/docs/installing/]
+`Albert` a lightweight application launcher [info](https://albertlauncher.github.io/docs/installing/)
 
 * Messenger client for linux
 
