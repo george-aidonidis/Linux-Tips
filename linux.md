@@ -90,6 +90,9 @@ sudo apt-get autoremove
 ```sh 
 sudo apt clean
 ```
+### Languages
+
+In order to change the system language on arch you might need to edit the `/etc/locale.conf` and then you have to find the language that you need and uncomment it.
 
 ## Useful packages
 
@@ -160,12 +163,25 @@ This will cause Vim to have syntax highlighting on, wrap at 72 characters and tu
 
 _Line 2 will cause an error if the plugin (which??) is not installed_
 
+Use vim as a globar git editor
+
+```sh
+git config --global core.editor "vim"
+```
+
 ## Graphics or Extensions
 #### Change window button position
 ```sh
 gsettings set  org.gnome.desktop.wm.preferences button-layout 'close,maximize,minimize:'
 ```
 
+Install arc theme:
+
+```sh
+yaourt -S gtk-theme-arc-git
+```
+
+[Arc-Theme](https://aur.archlinux.org/packages/gtk-theme-arc-git)
 #### Gnome Extensions
 
 * [System Monitor](https://extensions.gnome.org/extension/120/system-monitor/)
