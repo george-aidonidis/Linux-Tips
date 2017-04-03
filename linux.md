@@ -187,3 +187,4 @@ yaourt -S gtk-theme-arc-git
 * [System Monitor](https://extensions.gnome.org/extension/120/system-monitor/)
 * [Open Weather](https://extensions.gnome.org/extension/750/openweather)
 * [Dash to dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
+* [Terminal themes](https://github.com/Mayccoll/Gogh)
