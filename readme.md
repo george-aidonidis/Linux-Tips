@@ -18,8 +18,8 @@
     * [Setup vim for git commit messages](#setup-vim-for-git-commit-messages)
 4. [Graphics or Extensions](#graphics-or-extensions)
     * [Change window button position](#change-window-button-position)
-    * [Gnome Extensions](#gnome-extensions)
     * [Terminal themes](#terminal-themes)
+    * [Gnome Extensions](#gnome-extensions)
 
 ## General tips
 
