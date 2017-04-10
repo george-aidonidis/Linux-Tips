@@ -1,5 +1,7 @@
 # Linux tips (mostly arch)
 
+This a small guide that I use to setup my linux enviroment. It covers some basic comands along with a few packages.
+
 ## Table of Contents
 1. [General terminal tips](#general-tips)
     * [Display disks nicely](#display-disks-nicely)
@@ -7,6 +9,7 @@
     * [How to uninstall an application or package](#how-to-uninstall-an-application-or-package)
     * [How to install a package](#how-to-install-a-package)
     * [General apt commands](#general-apt-commands)
+    * [Copy and paste from terminal](#copy-and-paste-from-terminal)
 2. [Arch](#arch)
     * [How to keep arch up to date](#how-to-keep-arch-up-to-date)
     * [Aur update](#aur-update)
@@ -73,6 +76,39 @@ sudo apt-get autoremove
 sudo apt clean
 ```
 
+### Copy and Paste from terminal
+* You can always copy/paste things from/to terminal by using `ctrl + shift + c` and `ctrl + shift + v`.
+* In case you need to copy things directly to clipboard (like `pbcopy` on Mac Os) you can use the `xclip` package.
+
+```sh
+# Ubuntu
+sudo apt install xclip
+# Or for Arch
+sudo pacman -S xclip
+
+# You can then pipe the output into xclip to be copied into the clipboard:
+cat file | xclip
+
+# If you want to paste somewhere else other than a X application, try this one:
+cat file | xclip -selection clipboard
+```
+
+* To simplify life, you can set up an alias in your `.bashrc` or `.zshrc` file:
+
+```sh
+alias "xc=xclip"
+alias "xcc=xclip -selection clipboard"
+alias "xv=xclip -o"
+```
+Terminal 1:
+
+    pwd | c
+
+Terminal 2:
+
+    cd `v`
+
+_Notice the ` ` around v. This executes v as a command first and then substitutes it in-place for cd to use._
 ## Arch
 * List installed packages
 ```sh
