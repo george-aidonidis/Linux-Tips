@@ -249,3 +249,7 @@ yaourt -S gtk-theme-arc-git
 * [Open Weather](https://extensions.gnome.org/extension/750/openweather)
 * [Dash to dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 * [Clipboard indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
+
+#### Other useful programs/addons
+
+* [cmus Music Player](https://cmus.github.io/)
