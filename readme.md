@@ -19,6 +19,7 @@ This a small guide that I use to setup my linux enviroment. It covers some basic
     * [zsh](#zsh-install-on-linux)
 3. [Git](#git)
     * [Setup vim for git commit messages](#setup-vim-for-git-commit-messages)
+    * [Use vim as a globar git editor](#use-vim-as-a-globar-git-editor)
 4. [Graphics or Extensions](#graphics-or-extensions)
     * [Change window button position](#change-window-button-position)
     * [Terminal themes](#terminal-themes)
@@ -220,7 +221,7 @@ autocmd Filetype gitcommit spell textwidth=72
 ```
 This will cause Vim to have syntax highlighting on, wrap at 72 characters and turn spell checking on.
 
-Use vim as a globar git editor
+#### Use vim as a globar git editor
 
 ```sh
 git config --global core.editor "vim"
@@ -249,6 +250,7 @@ yaourt -S gtk-theme-arc-git
 * [Open Weather](https://extensions.gnome.org/extension/750/openweather)
 * [Dash to dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 * [Clipboard indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
+* [Better volume indicator](https://extensions.gnome.org/extension/759/better-volume-indicator/)
 
 #### Other useful programs/addons
 
