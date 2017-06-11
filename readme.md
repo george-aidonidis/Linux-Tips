@@ -14,7 +14,8 @@ This a small guide that I use to setup my linux enviroment. It covers some basic
     * [How to keep arch up to date](#how-to-keep-arch-up-to-date)
     * [Aur update](#aur-update)
     * [Languages](#languages)
-3. [Useful app](#useful-packages)
+    * [Steam](#steam)
+3. [Useful apps](#useful-packages)
     * [Node-js](#nodejs-on-linux)
     * [zsh](#zsh-install-on-linux)
 3. [Git](#git)
@@ -145,24 +146,55 @@ yaourt -Syu --aur
 
 ### Languages
 
-In order to change the system language on arch you might need to edit the `/etc/locale.conf` and then you have to find the language that you need and uncomment it.
+In order to change the system language or just a add new language, on arch, you might need to edit the `/etc/locale.conf` and then you have to find the language that you need and uncomment it.
 
 ```sh
 sudo vi /etc/locale.gen 
 sudo locale-gen 
 ```
 
+### Steam
+
+Steam is not officially supported on arch. Keep in mind that you need to install some 32-bit packages (even if you have 64-bit system, took me some time to figure this out). 
+
+
+* Enable the [multilib](https://wiki.archlinux.org/index.php/Multilib) repository
+
+Navigate to `pacman`'s conf file:
+```sh
+sudo vi /etc/pacman.conf
+```
+and uncomment the following lines:
+```sh
+# [multilib]
+# Include = /etc/pacman.d/mirrorlist
+```
+
+* Install Steam:
+
+```sh
+sudo pacman -S steam
+```
+and Steam should now be installed on your arch system.
+
+* Helpful links:
+Please check the following links for more details on how to install drivers for your graphics card.
+
+[Installing Steam on Antergos](https://antergos.com/wiki/hardware/installing-steam/)
+
+[Official arch wiki for steam](https://wiki.archlinux.org/index.php/steam)
 ## Useful packages
 
 ### nodejs on linux
 
 The best way to have node js on your system is with [nvm](https://github.com/creationix/nvm)
 
+_Please check latest version by visiting [nvm](https://github.com/creationix/nvm)_
 ```sh
 sudo pacman -Syu
 sudo pacman -S build-essential libssl-dev
 
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 
 # load profiles again
 source ~/.profile
