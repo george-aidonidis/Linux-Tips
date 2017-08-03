@@ -5,6 +5,7 @@ This a small guide that I use to setup my linux enviroment. It covers some basic
 ## Table of Contents
 1. [General terminal tips](#general-tips)
     * [Display disks nicely](#display-disks-nicely)
+    * [Folder info](#folder-info)
     * [How to check if a package is installed](#how-to-check-if-a-package-is-installed)
     * [How to uninstall an application or package](#how-to-uninstall-an-application-or-package)
     * [How to install a package](#how-to-install-a-package)
@@ -12,6 +13,7 @@ This a small guide that I use to setup my linux enviroment. It covers some basic
     * [Copy and paste from terminal](#copy-and-paste-from-terminal)
 2. [Arch](#arch)
     * [How to keep arch up to date](#how-to-keep-arch-up-to-date)
+    * [Delete old packages from pacman cache](#delete-old-packages-from-pacman-cache)
     * [Aur update](#aur-update)
     * [Languages](#languages)
     * [Steam](#steam)
@@ -41,7 +43,19 @@ sda             465.8G
 ├─sda3              1K
 ├─sda3 swap       3.9G [SWAP]     Swap
 ```
-
+### Folder info
+* Display size of given folder
+```bash
+du -sh /path/to/folder
+```
+* Produce a list of all the folders in /path/to/folder and their sizes
+```bash
+du -h --max-depth=1 /path/to/folder
+```
+* Organize the list from smallest to largest
+```bash
+du -h --max-depth=1 /path/to/folder | sort -nk1
+```
 ### How to check if a package is installed:
 ```sh
 which package_name
@@ -131,12 +145,25 @@ sudo pacman -Syu
 `y`: Refresh
 `u`: Restrict/filter output to packages that are out-of-date on the local system.
 
-This is to update the database, just like
-in Debian or Ubuntu.
+This is to update the database, just like in Debian or Ubuntu:
 ```sh
-sudo aptitude update
+sudo aptitude update # Ubuntu's similar command
 ```
 
+### Delete old packages from pacman cache
+* Pacman ships with a useful tool `paccache` for this. By default, paccache will remove all but the last three versions of an installed package. 
+* You can change this number with the `-k`, `--keep` switch. 
+
+* There is also a -d, --dryrun switch to preview your changes:
+```bash
+paccache -d
+```
+
+* Perform the delete of packages:
+```bash
+paccache -r
+```
+* See paccache [docs](https://wiki.archlinux.org/index.php/pacman#Cleaning_the_package_cache) for more.
 ### Aur update
 - Upgrade aur packages.
 
