@@ -27,7 +27,8 @@ This a small guide that I use to setup my linux enviroment. It covers some basic
     * [Change window button position](#change-window-button-position)
     * [Terminal themes](#terminal-themes)
     * [Gnome Extensions](#gnome-extensions)
-
+5. [Problems](#problems)
+    * [Touchpad settings](#touchpad-settings)
 ## General tips
 
 ### Display disks nicely
@@ -314,3 +315,7 @@ yaourt -S gtk-theme-arc-git
 #### Other useful programs/addons
 
 * [cmus Music Player](https://cmus.github.io/)
+## Problems
+#### Touchpad settings
+
+You might encounter a problem with mousepad/trackpad settings on gnome (missing settings on GUI mouse settings). In order to fix you have to remove the synaptics driver (i.e. `xf86-input-synaptics`). It might also be a good idea to remove any configuration files related to this (like the in `/etc/X11/xorg.conf.d/50-synaptics.conf`).
