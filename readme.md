@@ -331,7 +331,7 @@ Open `/etc/yaourtc` (open with an editor) and find the following line:
 #TMPDIR="/tmp"
 ```
 
-to
+Change it to:
 
 ```sh
 TMPDIR="/home/$USER/tmp"
