@@ -29,6 +29,7 @@ This a small guide that I use to setup my linux enviroment. It covers some basic
     * [Gnome Extensions](#gnome-extensions)
 5. [Problems](#problems)
     * [Touchpad settings](#touchpad-settings)
+    * [Yaourt building problems](#yaourt-building-problems)
 ## General tips
 
 ### Display disks nicely
@@ -38,7 +39,7 @@ sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL
 Outputs:
 ```sh
 NAME   FSTYPE     SIZE MOUNTPOINT LABEL
-sda             465.8G            
+sda             465.8G
 ├─sda1 ext4       255M /boot      Boot
 ├─sda2 ext4     461.7G /          Root
 ├─sda3              1K
@@ -86,10 +87,10 @@ sudo dpkg -i package_name
 ### General apt commands
 * Remove unused packages
 ```sh
-sudo apt-get autoremove 
+sudo apt-get autoremove
 ```
 * Clean files (remove downloaded archive files)
-```sh 
+```sh
 sudo apt clean
 ```
 
@@ -152,8 +153,8 @@ sudo aptitude update # Ubuntu's similar command
 ```
 
 ### Delete old packages from pacman cache
-* Pacman ships with a useful tool `paccache` for this. By default, paccache will remove all but the last three versions of an installed package. 
-* You can change this number with the `-k`, `--keep` switch. 
+* Pacman ships with a useful tool `paccache` for this. By default, paccache will remove all but the last three versions of an installed package.
+* You can change this number with the `-k`, `--keep` switch.
 
 * There is also a -d, --dryrun switch to preview your changes:
 ```bash
@@ -177,13 +178,13 @@ yaourt -Syu --aur
 In order to change the system language or just a add new language, on arch, you might need to edit the `/etc/locale.conf` and then you have to find the language that you need and uncomment it.
 
 ```sh
-sudo vi /etc/locale.gen 
-sudo locale-gen 
+sudo vi /etc/locale.gen
+sudo locale-gen
 ```
 
 ### Steam
 
-Steam is not officially supported on arch. Keep in mind that you need to install some 32-bit packages (even if you have 64-bit system, took me some time to figure this out). 
+Steam is not officially supported on arch. Keep in mind that you need to install some 32-bit packages (even if you have 64-bit system, took me some time to figure this out).
 
 
 * Enable the [multilib](https://wiki.archlinux.org/index.php/Multilib) repository
@@ -243,7 +244,7 @@ apt-get install zsh
 apt-get install git-core
 ```
 Getting zsh to work in ubuntu is weird, since `sh` does not understand the `source` command.  So, you do this to install zsh
-```sh        
+```sh
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 ```
 and then you change your shell to zsh
@@ -319,3 +320,19 @@ yaourt -S gtk-theme-arc-git
 #### Touchpad settings
 
 You might encounter a problem with mousepad/trackpad settings on gnome (missing settings on GUI mouse settings). In order to fix you have to remove the synaptics driver (i.e. `xf86-input-synaptics`). It might also be a good idea to remove any configuration files related to this (like the in `/etc/X11/xorg.conf.d/50-synaptics.conf`).
+
+#### Yaourt building problems
+
+When building large packages (like an IDE) you might get an error message that say `The device is out of space`. Chances are that yaourt is building things on tmp folder on swap/ram. You can specify another directory for building these packages (although it's going to be a bit slower) like this:
+
+Open `/etc/yaourtc` (open with an editor) and find the following line:
+
+```sh
+#TMPDIR="/tmp"
+```
+
+to
+
+```sh
+TMPDIR="/home/$USER/tmp"
+```
