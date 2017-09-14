@@ -30,6 +30,7 @@ This a small guide that I use to setup my linux enviroment. It covers some basic
 5. [Problems](#problems)
     * [Touchpad settings](#touchpad-settings)
     * [Yaourt building problems](#yaourt-building-problems)
+    * [GDM or LIGHTDM login does not appear on primary monitor](#gdm-or-lightdm-login-does-not-appear-on-primary-monitor)
 ## General tips
 
 ### Display disks nicely
@@ -335,4 +336,21 @@ Change it to:
 
 ```sh
 TMPDIR="/home/$USER/tmp"
+```
+
+#### GDM or LIGHTDM login does not appear on primary monitor
+
+When using two monitors or more you might don't get the login screen on your primary monitor. So, in order to fix this you can:
+
+1) Set primary monitor from `Settings` --> `Displays`
+2) Copy your monitor settings on your login manager folder
+
+* For LIGHTDM
+```sh
+sudo cp ~/.config/monitors.xml /var/lib/lightdm/.config/
+```
+
+* For GDM
+```sh
+sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/
 ```
