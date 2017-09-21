@@ -31,6 +31,7 @@ This a small guide that I use to setup my linux enviroment. It covers some basic
     * [Touchpad settings](#touchpad-settings)
     * [Yaourt building problems](#yaourt-building-problems)
     * [GDM or LIGHTDM login does not appear on primary monitor](#gdm-or-lightdm-login-does-not-appear-on-primary-monitor)
+    * [GDM bluetooth speakers](#gdm-bluetooth-speakers)
 ## General tips
 
 ### Display disks nicely
@@ -353,4 +354,15 @@ sudo cp ~/.config/monitors.xml /var/lib/lightdm/.config/
 * For GDM
 ```sh
 sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/
+```
+
+#### GDM bluetooth speakers
+
+When using gdm you might encounter the problem of connecting to bluetooth speakers but the device will not appear on output settings. As [docs](https://wiki.archlinux.org/index.php/Bluetooth_headset) specifies:
+
+> When using GDM, another instance of PulseAudio is started, which "captures" your bluetooth device connection. This can be prevented by masking the pulseaudio socket for the GDM user by doing the following:
+
+```sh
+mkdir -p ~gdm/.config/systemd/user
+ln -s /dev/null ~gdm/.config/systemd/user/pulseaudio.socket
 ```
