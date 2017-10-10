@@ -32,6 +32,7 @@ This a small guide that I use to setup my linux enviroment. It covers some basic
     * [Yaourt building problems](#yaourt-building-problems)
     * [GDM or LIGHTDM login does not appear on primary monitor](#gdm-or-lightdm-login-does-not-appear-on-primary-monitor)
     * [GDM bluetooth speakers](#gdm-bluetooth-speakers)
+    * [GDM fingerprint reader](#gdm-fingerprint-reader)
 ## General tips
 
 ### Display disks nicely
@@ -284,7 +285,7 @@ autocmd Filetype gitcommit spell textwidth=72
 ```
 This will cause Vim to have syntax highlighting on, wrap at 72 characters and turn spell checking on.
 
-#### Use vim as a globar git editor
+#### Use vim as a global git editor
 
 ```sh
 git config --global core.editor "vim"
@@ -366,3 +367,6 @@ When using gdm you might encounter the problem of connecting to bluetooth speake
 mkdir -p ~gdm/.config/systemd/user
 ln -s /dev/null ~gdm/.config/systemd/user/pulseaudio.socket
 ```
+
+#### GDM fingerprint reader
+If your laptop supports a fingerprint reader you can use it with [fprint](https://wiki.archlinux.org/index.php/Fprint). There is also an aur package [Fingerprint-gui](https://wiki.archlinux.org/index.php/Fingerprint-gui) but I could not make it to work properly.
