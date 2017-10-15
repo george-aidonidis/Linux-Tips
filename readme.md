@@ -381,8 +381,6 @@ If you get an error that it's not running you might need to add yourself to dock
 sudo gpasswd -a $USER dockerd
 ```
 
-Go to gnome terminal settings --> Profile preferences --> Command tab --> as login shell
-
 #### GruvBox on Gnome
 
 You can use the themes that are available [here](https://github.com/Mayccoll/Gogh).
