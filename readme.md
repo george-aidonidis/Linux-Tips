@@ -33,6 +33,8 @@ This a small guide that I use to setup my linux enviroment. It covers some basic
     * [GDM or LIGHTDM login does not appear on primary monitor](#gdm-or-lightdm-login-does-not-appear-on-primary-monitor)
     * [GDM bluetooth speakers](#gdm-bluetooth-speakers)
     * [GDM fingerprint reader](#gdm-fingerprint-reader)
+    * [Docker](#docker)
+    * [GruvBox](#gruvbox-on-gnome)
 ## General tips
 
 ### Display disks nicely
@@ -370,3 +372,23 @@ ln -s /dev/null ~gdm/.config/systemd/user/pulseaudio.socket
 
 #### GDM fingerprint reader
 If your laptop supports a fingerprint reader you can use it with [fprint](https://wiki.archlinux.org/index.php/Fprint). There is also an aur package [Fingerprint-gui](https://wiki.archlinux.org/index.php/Fingerprint-gui) but I could not make it to work properly.
+
+#### Docker
+
+If you get an error that it's not running you might need to add yourself to docker group:
+
+```sh
+sudo gpasswd -a $USER dockerd
+```
+
+Go to gnome terminal settings --> Profile preferences --> Command tab --> as login shell
+
+#### GruvBox on Gnome
+
+You can use the themes that are available [here](https://github.com/Mayccoll/Gogh).
+Remember to have enabled the setting `Run command as login shell` enabled (gnome terminal settings --> Profile preferences --> Command tab --> Check `Run command as login shell`).
+
+Install GruvBox by running and selecting the GruvBox theme number:
+```sh
+wget -O gogh https://git.io/vQgMr && chmod +x gogh && ./gogh && rm gogh
+```
