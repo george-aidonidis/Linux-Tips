@@ -28,6 +28,7 @@ This a small guide that I use to setup my linux enviroment. It covers some basic
     * [Terminal themes](#terminal-themes)
     * [Gnome Extensions](#gnome-extensions)
 5. [Problems](#problems)
+    * [Microphone](#microphone)
     * [Touchpad settings](#touchpad-settings)
     * [Yaourt building problems](#yaourt-building-problems)
     * [GDM or LIGHTDM login does not appear on primary monitor](#gdm-or-lightdm-login-does-not-appear-on-primary-monitor)
@@ -322,6 +323,9 @@ yaourt -S gtk-theme-arc-git
 
 * [cmus Music Player](https://cmus.github.io/)
 ## Problems
+#### Microphone
+
+When talking on microphone (having meetings etc...) the microphone gets automatically adjusted that causes sound distortion. You can solve that by following the wiki [here](https://wiki.archlinux.org/index.php/PulseAudio/Troubleshooting#Microphone_distorted_due_to_automatic_adjustment)
 #### Touchpad settings
 
 You might encounter a problem with mousepad/trackpad settings on gnome (missing settings on GUI mouse settings). In order to fix you have to remove the synaptics driver (i.e. `xf86-input-synaptics`). It might also be a good idea to remove any configuration files related to this (like the in `/etc/X11/xorg.conf.d/50-synaptics.conf`).
