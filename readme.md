@@ -385,6 +385,8 @@ If you get an error that it's not running you might need to add yourself to dock
 sudo gpasswd -a $USER dockerd
 ```
 
+Also check if the `docker.service` is running (in a few cases you just need to reboot).
+
 #### GruvBox on Gnome
 
 You can use the themes that are available [here](https://github.com/Mayccoll/Gogh).
